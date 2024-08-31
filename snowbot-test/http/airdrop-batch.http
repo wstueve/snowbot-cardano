@@ -1,0 +1,93 @@
+# This is free and unencumbered software released into the public domain.
+# Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
+# In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and
+# successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+# For more information, please refer to <http://unlicense.org/>
+
+# Test Creating a Basic Batch
+POST {{frontendApiUrl}}/assets/batch
+Authorization: Bearer {{testSecret}}
+X-Integration-Testing: true
+Accept: application/json
+Content-Type: application/json
+
+{
+  "airdropId": "xxx-xxx-xx-xxx",
+  "addresses": [
+    "[address1]",
+    "[address2]"
+  ],
+  "metadata": [
+    {
+      "SnowSkelly420": {
+        "Hat": "Bobo's Hat",
+        "Eyes": "Bobo's Shades",
+        "Nose": "Bobo's Nose",
+        "name": "SnowSkelly420",
+        "Hands": "Bobo's Gloves",
+        "Mouth": "Bobo's Mouth",
+        "Pants": "Bobo's Pants",
+        "Shoes": "Bobo's Shoes",
+        "Torso": "Bobo's Shirt",
+        "files": [
+          {
+            "src": "ipfs://QmewtTjaEuSrwget2xcbEH6fF7xEHanLyKPiVmSCKxtCPb",
+            "name": "SnowSkelly420",
+            "mediaType": "image/png"
+          }
+        ],
+        "image": "ipfs://QmewtTjaEuSrwget2xcbEH6fF7xEHanLyKPiVmSCKxtCPb",
+        "Object": "Bobo's Bud Leaf Bongos",
+        "Website": "https://snowskellies.io/",
+        "mediaType": "image/png",
+        "Background": "Bobo Flame",
+        "description": "Snow Skelly - Eric Bobo Edition"
+      }
+    },
+    {
+      "SnowSkelly995": {
+        "Eyes": "Soft Yellow Eyes Light Blue Iris",
+        "Face": "None",
+        "Head": "White Xmas Hat",
+        "Neck": "Soft Yellow Coat Collar",
+        "Nose": "Dark Blue Nose Clown",
+        "Vest": "None",
+        "name": "SnowSkelly995",
+        "Hands": "Dark Blue Mittens",
+        "Mouth": "White Mouth Huh Sharp Teeth",
+        "Pants": "Dark Blue",
+        "Shoes": "Red Pirate Boots",
+        "Torso": "Dark Magenta White Cardano Coat",
+        "files": [
+          {
+            "src": "ipfs://QmX7XuQst5LDz7ysYKAMRtbukp8keZwXFZBjc3u6VxHu6T",
+            "name": "SnowSkelly995",
+            "mediaType": "image/png"
+          }
+        ],
+        "image": "ipfs://QmX7XuQst5LDz7ysYKAMRtbukp8keZwXFZBjc3u6VxHu6T",
+        "Holding": "Grayish Blue Selfie Stick",
+        "Website": "snowskellies.io",
+        "Accessory": "None",
+        "mediaType": "image/png",
+        "Background": "None",
+        "Vest Flair": "None",
+        "Torso - Arms": "White Striped Grayish Blue Arms Sleeves"
+      }
+    }
+  ]
+}
+
+###
+
+# Test Creating a Basic Batch
+PUT {{frontendApiUrl}}/assets/batch/xxx-xxx-xxx-xx
+Authorization: Bearer {{testSecret}}
+X-Integration-Testing: true
+Accept: application/json
+Content-Type: application/json
+
+{
+  "paymentAddress": "[paymentAddress]",
+}

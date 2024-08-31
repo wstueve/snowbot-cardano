@@ -1,0 +1,400 @@
+// This is free and unencumbered software released into the public domain.
+// Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
+// In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and
+// successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// For more information, please refer to <http://unlicense.org/>
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+  schemas   = ["auth", "public"]
+}
+
+model Project {
+  id                   String                      @id @default(cuid())
+  name                 String
+  userInterfaceConfig  Json?
+  epochRewardsConfig   Json?
+  epochs               Epoch[]
+  distributionPolicies ProjectDistributionPolicy[]
+  projectWallets       ProjectWallet[]
+  projectMintPolicies  ProjectMintPolicy[]
+
+  @@unique([name])
+  @@schema("public")
+}
+
+model ProjectWallet {
+  id        String  @id @default(cuid())
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id])
+  policyId  String
+  address   String
+  secretKey String  @unique /// @encrypted
+
+  @@unique([projectId, policyId], name: "projectIdPolicyId")
+  @@schema("public")
+}
+
+model ProjectMintPolicy {
+  id         Int       @id @default(autoincrement())
+  projectId  String
+  prefix     String
+  project    Project   @relation(fields: [projectId], references: [id])
+  type       String    @default("all")
+  beforeTime DateTime?
+  afterTime  DateTime?
+  secretKey  String    @unique /// @encrypted
+  policyId   String
+
+  @@unique([projectId, prefix], name: "projectIdPrefix")
+  @@schema("public")
+}
+
+model ProjectDistributionPolicy {
+  id                         Int                         @id @default(autoincrement())
+  projectId                  String
+  project                    Project                     @relation(fields: [projectId], references: [id])
+  policyId                   Int
+  policy                     Policy                      @relation(fields: [policyId], references: [id])
+  maxWithdrawalAmountPerDay  BigInt                      @default(0)
+  maxWithdrawalRequestAmount BigInt                      @default(0)
+  isWithdrawalEnabled        Boolean                     @default(false)
+  projectDistributionRewards ProjectDistributionReward[]
+
+  @@unique([policyId, projectId], name: "policyIdProjectId")
+  @@schema("public")
+}
+
+model ProjectDistributionReward {
+  id                          Int                       @id @default(autoincrement())
+  projectDistributionPolicyId Int
+  projectDistributionPolicy   ProjectDistributionPolicy @relation(fields: [projectDistributionPolicyId], references: [id])
+  policyId                    Int
+  policy                      Policy                    @relation(fields: [policyId], references: [id])
+  amount                      BigInt
+  perEveryDays                Int
+
+  @@unique([projectDistributionPolicyId, policyId], name: "projectDistributionPolicyIdPolicyId")
+  @@schema("public")
+}
+
+model Asset {
+  id            Int            @id @default(autoincrement())
+  policyId      String
+  assetName     String
+  fingerprint   String
+  imageUrl      String
+  name          String
+  totalSupply   Int            @default(1)
+  metadata      Json?
+  holders       Holder[]
+  rewardLedgers RewardLedger[]
+  AirdropBatch  AirdropBatch[]
+  AirdropNft    AirdropNft[]
+
+  @@unique([policyId, assetName], name: "policyIdAssetName")
+  @@unique([fingerprint])
+  @@schema("public")
+}
+
+model RewardAccount {
+  id          Int            @id @default(autoincrement())
+  accountType String
+  foreignId   String
+  projectId   String         @default("clqb8f1sn0000zmqhrpasac45")
+  ledgers     RewardLedger[]
+  balances    Balance[]
+  withdrawals Withdrawal[]
+
+  @@unique([accountType, foreignId], name: "accountTypeForeignId")
+  @@schema("public")
+}
+
+model WithdrawalAmount {
+  id           Int        @id @default(autoincrement())
+  amount       BigInt
+  decimals     Int
+  policyId     String
+  withdrawalId Int
+  withdrawal   Withdrawal @relation(fields: [withdrawalId], references: [id])
+
+  @@schema("public")
+}
+
+model Withdrawal {
+  id                     Int                @id @default(autoincrement())
+  externalId             String
+  projectId              String             @default("clqb8f1sn0000zmqhrpasac45")
+  rewardAccountId        Int
+  rewardAccount          RewardAccount      @relation(fields: [rewardAccountId], references: [id])
+  status                 String
+  statusTime             DateTime
+  transactionHash        String?
+  transactionDescription String?
+  withdrawalAmounts      WithdrawalAmount[]
+
+  @@index([externalId])
+  @@schema("public")
+}
+
+model RewardLedger {
+  id                     Int           @id @default(autoincrement())
+  epochId                Int
+  transactionType        String
+  transactionDescription String
+  assetId                Int
+  amount                 BigInt        @default(0)
+  policyId               String
+  boost                  Int           @default(0)
+  decimals               Int
+  rewardAccountId        Int
+  rewardAccount          RewardAccount @relation(fields: [rewardAccountId], references: [id])
+  asset                  Asset         @relation(fields: [assetId], references: [id])
+
+  @@unique([epochId, assetId, transactionType], name: "epochIdAssetIdTransactionType")
+  @@schema("public")
+}
+
+model Balance {
+  id              Int           @id @default(autoincrement())
+  policyId        String
+  projectId       String        @default("clqb8f1sn0000zmqhrpasac45")
+  balance         BigInt        @default(0)
+  decimals        Int
+  rewardAccountId Int
+  rewardAccount   RewardAccount @relation(fields: [rewardAccountId], references: [id])
+
+  @@unique([policyId, rewardAccountId], name: "policyIdRewardAccountId")
+  @@schema("public")
+}
+
+model Stake {
+  id            Int    @id @default(autoincrement())
+  rewardAddress String @unique
+  signature     String
+  publicKey     String
+  userId        String
+  user          User   @relation(fields: [userId], references: [id])
+
+  @@index([rewardAddress])
+  @@index([userId])
+  @@schema("public")
+}
+
+model Holder {
+  id       Int    @id @default(autoincrement())
+  userId   String
+  user     User?  @relation(fields: [userId], references: [id])
+  quantity Int    @default(1)
+  boost    Int    @default(0)
+  epochId  Int
+  assetId  Int
+  policyId String
+  asset    Asset  @relation(fields: [assetId], references: [id])
+
+  @@unique([epochId, assetId], name: "epochIdAssetId")
+  @@index([userId, epochId])
+  @@schema("public")
+}
+
+model Epoch {
+  id          Int      @id @default(autoincrement())
+  epochNumber Int
+  startTime   DateTime
+  endTime     DateTime
+  status      String
+  statusTime  DateTime
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id])
+  metadata    Json?
+
+  @@unique([epochNumber, projectId], name: "epochNumberProjectId")
+  @@index([status])
+  @@schema("public")
+}
+
+model Snapshot {
+  id          Int      @id @default(autoincrement())
+  epochId     Int
+  type        String
+  completedAt DateTime
+  policyId    String
+
+  @@index([policyId, epochId, type])
+  @@schema("public")
+}
+
+model Distribution {
+  id          Int      @id @default(autoincrement())
+  epochId     Int
+  type        String
+  completedAt DateTime
+  policyId    String
+
+  @@index([policyId, epochId, type])
+  @@schema("public")
+}
+
+model Policy {
+  id                          Int                         @id @default(autoincrement())
+  policyId                    String
+  name                        String?
+  ticker                      String?
+  description                 String?
+  decimals                    Int?
+  url                         String?
+  image                       String?
+  maxSupply                   String?
+  providesBoost               Boolean                     @default(false)
+  projectDistributionPolicies ProjectDistributionPolicy[]
+  projectDistributionRewards  ProjectDistributionReward[]
+
+  @@unique([policyId])
+  @@schema("public")
+}
+
+model Airdrop {
+  id             String         @id @default(uuid())
+  name           String
+  userId         String
+  user           User           @relation(fields: [userId], references: [id])
+  policyId       String
+  policyScript   String
+  skey           String         @db.Text /// @encrypted
+  created        DateTime       @default(now())
+  airdropBatches AirdropBatch[]
+  AirdropNft     AirdropNft[]
+
+  @@index([userId])
+  @@schema("public")
+}
+
+model AirdropBatch {
+  id             String       @id @default(uuid())
+  airdropId      String
+  airdrop        Airdrop      @relation(fields: [airdropId], references: [id])
+  txId           String?
+  paymentAddress String
+  status         String       @default("new")
+  created        DateTime     @default(now())
+  updated        DateTime     @default(now())
+  airdropNfts    AirdropNft[]
+  Asset          Asset?       @relation(fields: [assetId], references: [id])
+  assetId        Int?
+
+  @@unique([txId])
+  @@index([airdropId])
+  @@schema("public")
+}
+
+model AirdropNft {
+  id             Int           @id @default(autoincrement())
+  airdropId      String
+  airdrop        Airdrop       @relation(fields: [airdropId], references: [id])
+  airdropBatchId String?
+  airdropBatch   AirdropBatch? @relation(fields: [airdropBatchId], references: [id])
+  assetId        Int?
+  asset          Asset?        @relation(fields: [assetId], references: [id])
+  address        String
+  metadata       Json
+
+  @@index([airdropBatchId])
+  @@schema("public")
+}
+
+////////////////////////////////////////////////////////////////////////
+// auth schema
+////////////////////////////////////////////////////////////////////////
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text /// @encrypted
+  access_token      String? @db.Text /// @encrypted
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text /// @encrypted
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@schema("auth")
+}
+
+model Session {
+  id               String   @id @default(cuid())
+  sessionToken     String   @unique /// @encrypted
+  sessionTokenHash String?  @unique /// @encryption:hash(sessionToken)
+  userId           String
+  expires          DateTime
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@schema("auth")
+}
+
+model RegisterStake {
+  id            BigInt  @id @default(autoincrement())
+  rewardAddress String
+  nonce         String
+  signature     String?
+  publicKey     String?
+  userId        String
+
+  @@index([rewardAddress])
+  @@schema("auth")
+}
+
+model User {
+  id            String     @id @default(cuid())
+  name          String?
+  email         String?    @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  stakes        Stake[]
+  holders       Holder[]
+  userRoles     UserRole[]
+  Airdrop       Airdrop[]
+
+  @@schema("auth")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@schema("auth")
+}
+
+model Role {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  userRoles UserRole[]
+
+  @@schema("auth")
+}
+
+model UserRole {
+  id     String @id @default(cuid())
+  userId String
+  roleId String
+  user   User   @relation(fields: [userId], references: [id])
+  role   Role   @relation(fields: [roleId], references: [id])
+
+  @@unique([userId, roleId])
+  @@schema("auth")
+}

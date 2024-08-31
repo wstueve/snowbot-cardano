@@ -1,0 +1,248 @@
+# This is free and unencumbered software released into the public domain.
+# Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
+# In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and
+# successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+# For more information, please refer to <http://unlicense.org/>
+
+Prompt: 
+
+Consider the highlighted text.  I need 10 more lines like it with the exact format of each line with the three slugs present at least once in each lines. This is the format:
+f"**{{attacker}}**  **{{defender}}**  **{{dmg}}** !",
+
+The white spaces should be replaced to form a coherent english sentence if the slugs for attacker and defender are replaced with nouns and dmg is replaced with a number.  The same theme and spirit of the highlighted text as an example should be used.  Please use a variety of items to cause damage and colorful language to describe the results.
+
+Please try to look for winter and snow related items and verbs for item. Use some  more synonyms for damage.  Do not reuse any nouns or verbs. Rating is PG-13
+
+
+Prompt: 
+
+Consider the highlighted text. I need 15 more lines like it with the exact 
+format of each line with the three slugs present at least once in each lines. 
+This is the format:
+f" **{{attacker}}**  **{{defender}}**  **{{dmg}}** !",
+
+The white spaces should be replaced to form a short coherent english sentence if the slugs for attacker 
+and defender are replaced with nouns and dmg is replaced with a number for the damage in a game.  
+The nouns, verbs and descriptions should be snow skelly related, winter themed or meme related.  
+Please use a variety of items to describe the event and exciting, suggestive language and double entendres. Be edgy and creative and use surpising items with high comedic value scores.
+
+Don't reuse the same description or synonym for damage. 
+Do not reuse any nouns or verbs. Rating is PG-13
+
+Prompt:
+Consider the highlighted text.  I need 10 more lines like it with the exact format of each line with the three slugs present at least once in each lines. This is the format:
+f" **{{attacker}}** **{{heal}}** HP!",
+
+The white spaces should be replaced to form a coherent english sentence if the slugs for attacker are replaced with nouns and heal is replaced with a number.  
+The same theme and spirit of the highlighted text as an example should be used.  
+Please use a variety of items to restore HP and exciting language on the edge of raunchy. 
+Be edgy and creative and use surpising but funny items.
+
+Utilize winter and snow related nouns and verbs when making phrases. 
+Don't reuse the same description or synonym for healing. 
+Do not reuse any nouns or verbs. Rating is PG-13
+
+Prompt:
+I need 10 line of code generated with the exact format of each line with the two slugs present at least once in each lines. This is the format: f" {{defender}} {{dmg}} !",
+
+The white spaces should be replaced to form a coherent english sentence if the slugs for attacker are replaced with nouns and dmg is replaced with a number.
+Use polar and winter themed natural disasters to describe the epic event round damage.
+Please use a variety of items to describe the event and exciting, suggestive language and double entendres. Be edgy and creative and use surpising items with high comedic value scores.
+
+Utilize winter and snow related nouns and verbs when making phrases. Don't reuse the same description or synonym in highlighted text. Replace the word damage with a synonym for points of damage. Do not reuse any nouns or verbs. Rating is PG-13
+
+Prompt:
+Consider the highlighted text. I need 15 more lines like it with the exact format of each line with the three slugs present at least once in each lines. This is the format: f" {{attacker}} {{defender}} {{dmg}} !",
+
+The white spaces should be replaced to form a short coherent english sentence if the slugs for attacker and defender are replaced with nouns and dmg is replaced with a number for the damage in a game.
+The nouns, verbs and descriptions should be snow skelly related, winter themed or meme related.
+Please use a variety of items to describe the event and exciting, suggestive language and double entendres. Be edgy and creative and use surpising items with high comedic value scores.
+
+Do not reuse any nouns or verbs. Rating is PG-13
+
+
+attack phrase format:
+f"**{{attacker}}** chucks an icicle at **{{defender}}** an hits him in the eye, causing **{{dmg}}** damage!",
+f"**{{attacker}}** grows tentacles from where their neck and head used to be and beats **{{defender}}** with them, reducing the victim's health by **{{dmg}}**!",
+f"**{{attacker}}** was apparently a witch all along and casts an ice spell on **{{defender}}** who thinks it's just a snowy day in June, and freezes **{{dmg}}** nuts worth of health away...",
+f"**{{attacker}}** gets **{{defender}}** to follow him on his bicycle leading them to a snowy crevase, which, of course, they fall down taking **{{dmg}}** fall damage along with a good lesson about character.",
+f"**{{attacker}}** notices **{{defender}}** is thirsty and offers them a stein of ale which is fizzing and appears somewhat cloudy. **{{defender}}** wakes up wtih **{{dmg}}**.",
+f"**{{attacker}}** whacks **{{defender}}** over the head with a bag causing **{{dmg}}** worth of head wounds!",
+f"**{{attacker}}** pulls our a saber and slices at **{{defender}}**'s ice cream cone. It didn't go as planned causing **{{dmg}}** of arm damage!",
+f"**{{attacker}}** casts a heavy crankbait at **{{defender}}** and leaves a huge mark! Minus **{{dmg}}** health!",
+f"**{{attacker}}** photobombs **{{defender}}**'s selfie and the resulting faux paux causes **{{dmg}}** unfollows.",
+f"**{{attacker}}** sneaks up and strangles **{{defender}}** with the Christmas lights they were taking down causing **{{dmg}}** damage! Maybe next time we'll keep remarks to ourselves about what season Christmas is in.",
+f"**{{attacker}}** is seen walking with **{{defender}}**'s head by their hair with tinsel and ornaments, Miraculously, this only causes **{{dmg}}** damage!",
+f"**{{attacker}}** sharpens a candy cane and pokes **{{defender}}** in the eye resulting in **{{dmg}}** loss of vision!",
+f"**{{attacker}}** gets **{{defender}}** to take their bag with a well timed tweet. **{{defender}}** loses **{{dmg}}** ada before they are home from work when it crashes!",
+f"**{{attacker}}** convinces **{{defender}}** to try their homemade hot sauce, causing **{{dmg}}** damage to their taste buds!",
+f"**{{attacker}}** tricks **{{defender}}** into a game of hot potato with a real grenade, causing **{{dmg}}** explosive damage!",
+f"**{{attacker}}** challenges **{{defender}}** to a dance-off and busts out moves so sick, they cause **{{dmg}}** damage!",
+f"**{{attacker}}** convinces **{{defender}}** to try a new extreme sport, resulting in **{{dmg}}** broken bones!",
+f"**{{attacker}}** sends **{{defender}}** on a wild goose chase that ends in a pit of quicksand, causing **{{dmg}}** damage!",
+f"**{{attacker}}** convinces **{{defender}}** to take a 'shortcut' through a cactus field, resulting in **{{dmg}}** prickly damage!",
+f"**{{attacker}}** tricks **{{defender}}** into a game of leapfrog with actual frogs, causing **{{dmg}}** amphibious damage!",
+f"**{{attacker}}** convinces **{{defender}}** to try their new VR game, but it's so realistic it causes **{{dmg}}** psychological damage!",
+f"**{{attacker}}** sends **{{defender}}** on a treasure hunt that ends in a beehive, causing **{{dmg}}** sting damage!",
+f"**{{attacker}}** tricks **{{defender}}** into a game of tag on a frozen lake, causing **{{dmg}}** slip-and-slide damage!"
+f"**{{attacker}}**, a mischievous snow skelly, hurls a snowball filled with pebbles at **{{defender}}**, causing **{{dmg}}** damage!",
+f"**{{attacker}}** uses a frozen slingshot to launch icicles at **{{defender}}**, causing **{{dmg}}** piercing damage!",
+f"**{{attacker}}** summons a mini ice dragon that breathes frost at **{{defender}}**, causing **{{dmg}}** frostbite damage!",
+f"**{{attacker}}** rolls a giant snowball down a hill towards **{{defender}}**, causing **{{dmg}}** crushing damage!",
+f"**{{attacker}}** tricks **{{defender}}** into stepping on a frozen puddle, causing **{{dmg}}** slip damage!",
+f"**{{attacker}}** throws a petrol bomb at **{{defender}}**, causing **{{dmg}}** fiery damage amidst the snowy landscape!",
+f"**{{attacker}}** uses a snow blower to blast **{{defender}}** with a flurry of snow and ice, causing **{{dmg}}** chilling damage!",
+f"**{{attacker}}** drops a bowling ball from a ski lift onto **{{defender}}**, causing **{{dmg}}** impact damage!",
+f"**{{attacker}}** lures **{{defender}}** into a snow fort and then collapses it, causing **{{dmg}}** suffocation damage!",
+f"**{{attacker}}** challenges **{{defender}}** to a snowball fight, but their snowballs are made of ice, causing **{{dmg}}** bruising damage!"
+f"**{{attacker}}** catapults a flurry of snowballs at **{{defender}}**, pelting them for **{{dmg}}** frosty harm!",
+f"**{{attacker}}** lobs a frozen turkey at **{{defender}}**, causing a bone-chilling **{{dmg}}** bruising!",
+f"**{{attacker}}** sends a rabid snowman after **{{defender}}**, inflicting a frosty **{{dmg}}** points of terror!",
+f"**{{attacker}}** swings a string of frozen Christmas lights at **{{defender}}**, causing **{{dmg}}** lacerations!",
+f"**{{attacker}}** hurls a snow globe at **{{defender}}**, causing **{{dmg}}** points of glass-shard damage!",
+f"**{{attacker}}** launches a flurry of icicle darts at **{{defender}}**, piercing them for **{{dmg}}** injury!",
+f"**{{attacker}}** tricks **{{defender}}** into a patch of thin ice, causing **{{dmg}}** hypothermia damage!",
+f"**{{attacker}}** drops a frozen fruitcake on **{{defender}}** from a tree, causing **{{dmg}}** crushing damage!",
+f"**{{attacker}}** sprays **{{defender}}** with a super soaker filled with ice water, causing **{{dmg}}** shock damage!",
+f"**{{attacker}}** sends a pack of snow skellies after **{{defender}}**, causing **{{dmg}}** points of bone-chilling harm!"
+f"**{{attacker}}** uses a sock puppet to distract **{{defender}}** and then kicks them with a roundhouse causing **{{dmg}}** damage!",
+f"**{{attacker}}** deploys a squadron of frost fairies against **{{defender}}**, inflicting **{{dmg}}** magical frost damage!",
+f"**{{attacker}}** sets a trap with a snow-covered pitfall for **{{defender}}**, causing **{{dmg}}** fall damage!",
+f"**{{attacker}}** whips up a blizzard, burying **{{defender}}** in snow, causing **{{dmg}}** points of cold isolation damage!",
+f"**{{attacker}}** sends a flurry of snowflakes enchanted with frostbite at **{{defender}}**, causing **{{dmg}}** numbing damage!",
+f"**{{attacker}}** releases a pack of ice wolves on **{{defender}}**, causing **{{dmg}}** points of biting cold damage!",
+f"**{{attacker}}** uses a snowplow to bury **{{defender}}** in a mountain of snow, causing **{{dmg}}** points of suffocating damage!",
+f"**{{attacker}}** fires a cannon loaded with frozen peas at **{{defender}}**, causing **{{dmg}}** points of stinging damage!",
+f"**{{attacker}}** uses a magical snowflake to freeze **{{defender}}** in place, causing **{{dmg}}** immobilization damage!",
+f"**{{attacker}}** sends a gust of icy wind to chill **{{defender}}** to the bone, causing **{{dmg}}** points of hypothermia damage!",
+f"**{{attacker}}** uses a sled to ram into **{{defender}}**, causing **{{dmg}}** points of collision damage!"
+f"**{{attacker}}** summons a blizzard dragon, who breathes icy fire on **{{defender}}**, causing **{{dmg}}** points of frostburn damage!",
+f"**{{attacker}}** uses a mystical snow globe, trapping **{{defender}}** in a mini snowstorm, causing **{{dmg}}** points of disorientation damage!",
+f"**{{attacker}}** wields a legendary Frostbite sword, slashing at **{{defender}}**, causing **{{dmg}}** points of chilling wound damage!",
+f"**{{attacker}}** calls upon the power of the Winter Solstice, freezing **{{defender}}** in a block of ice, causing **{{dmg}}** points of immobilization damage!",
+f"**{{attacker}}** rides a mammoth through a snowstorm, trampling **{{defender}}**, causing **{{dmg}}** points of crushing damage!",
+f"**{{attacker}}** uses a Yule log as a battering ram, hitting **{{defender}}**, causing **{{dmg}}** points of blunt force damage!",
+f"**{{attacker}}** throws a potion of icy wind at **{{defender}}**, causing **{{dmg}}** points of hypothermia damage!",
+f"**{{attacker}}** uses a snow cannon, blasting **{{defender}}** with a barrage of icy projectiles, causing **{{dmg}}** points of piercing damage!",
+f"**{{attacker}}** releases a swarm of frost pixies, who attack **{{defender}}**, causing **{{dmg}}** points of magical frost damage!",
+f"**{{attacker}}** uses a sled as a shield and rams into **{{defender}}**, causing **{{dmg}}** points of collision damage!"
+f"**{{attacker}}** catapults a snowman's carrot nose at **{{defender}}**, causing **{{dmg}}** points of humorous puncture damage!",
+f"**{{attacker}}** hurls a frozen turkey, the centerpiece of a winter feast, at **{{defender}}**, causing **{{dmg}}** points of unexpected bludgeoning damage!",
+f"**{{attacker}}** uses a snow blower, launching a flurry of snowballs at **{{defender}}**, causing **{{dmg}}** points of rapid-fire chill damage!",
+f"**{{attacker}}** swings a string of holiday lights like a whip at **{{defender}}**, causing **{{dmg}}** points of festive laceration damage!",
+f"**{{attacker}}** throws a pot of boiling hot cocoa at **{{defender}}**, causing **{{dmg}}** points of delicious scalding damage!",
+f"**{{attacker}}** launches a Christmas tree star like a ninja star at **{{defender}}**, causing **{{dmg}}** points of shining slice damage!",
+f"**{{attacker}}** hurls a frozen fruitcake, the dreaded holiday gift, at **{{defender}}**, causing **{{dmg}}** points of comedic concussion damage!",
+f"**{{attacker}}** uses a sled as a battering ram against **{{defender}}**, causing **{{dmg}}** points of thrilling collision damage!",
+f"**{{attacker}}** throws an icicle like a javelin at **{{defender}}**, causing **{{dmg}}** points of piercing cold damage!",
+f"**{{attacker}}** launches a snow globe, revealing a mini blizzard upon impact with **{{defender}}**, causing **{{dmg}}** points of disorienting frost damage!"
+f"**{{attacker}}** hurls a snowball filled with pebbles at **{{defender}}**, causing **{{dmg}}** points of stinging impact!",
+f"**{{attacker}}** uses a frozen fish as a club, smacking **{{defender}}**, causing **{{dmg}}** points of slippery bludgeoning!",
+f"**{{attacker}}** rides a snowmobile into **{{defender}}**, causing **{{dmg}}** points of high-speed collision!",
+f"**{{attacker}}** swings a string of frozen sausages at **{{defender}}**, causing **{{dmg}}** points of unexpected bruising!",
+f"**{{attacker}}** launches a flurry of icicle darts at **{{defender}}**, causing **{{dmg}}** points of frosty puncture!",
+f"**{{attacker}}** uses a snow shovel like a broadsword, slashing at **{{defender}}**, causing **{{dmg}}** points of icy cut!",
+f"**{{attacker}}** throws a bucket of yellow snow at **{{defender}}**, causing **{{dmg}}** points of gross-out damage!",
+f"**{{attacker}}** uses a frozen waffle as a frisbee, hitting **{{defender}}**, causing **{{dmg}}** points of breakfast-themed impact!",
+f"**{{attacker}}** hurls a snow globe, revealing a mini blizzard upon impact with **{{defender}}**, causing **{{dmg}}** points of disorienting frost!",
+f"**{{attacker}}** swings a frozen leg of lamb at **{{defender}}**, causing **{{dmg}}** points of festive bludgeoning!",
+f"**{{attacker}}** uses a pair of ice skates as throwing stars at **{{defender}}**, causing **{{dmg}}** points of slicing damage!",
+f"**{{attacker}}** launches a Christmas tree at **{{defender}}**, causing **{{dmg}}** points of pine-scented crushing!",
+f"**{{attacker}}** throws a frozen pumpkin pie at **{{defender}}**, causing **{{dmg}}** points of holiday-themed concussion!",
+f"**{{attacker}}** uses a snow blower, launching a flurry of icy debris at **{{defender}}**, causing **{{dmg}}** points of chilling barrage!",
+f"**{{attacker}}** hurls a frozen turkey at **{{defender}}**, causing **{{dmg}}** points of Thanksgiving trauma!"
+f"**{{attacker}}** swings a frozen candy cane at **{{defender}}**, causing **{{dmg}}** points of minty mayhem!",
+f"**{{attacker}}** launches a snowball filled with pebbles at **{{defender}}**, causing **{{dmg}}** points of stinging surprise!",
+f"**{{attacker}}** uses a snow blower to blast **{{defender}}**, causing **{{dmg}}** points of frosty fury!",
+f"**{{attacker}}** hurls a frozen turkey at **{{defender}}**, causing **{{dmg}}** points of Thanksgiving trauma!",
+f"**{{attacker}}** tricks **{{defender}}** into a snowman-building contest, then drops the snowman's head on them, causing **{{dmg}}** points of frosty concussion!",
+f"**{{attacker}}** sends a pack of ice weasels after **{{defender}}**, causing **{{dmg}}** points of chilling chomp!",
+f"**{{attacker}}** uses a frozen waffle as a frisbee, hitting **{{defender}}**, causing **{{dmg}}** points of breakfast-themed impact!",
+f"**{{attacker}}** deploys a squadron of snow owls against **{{defender}}**, inflicting **{{dmg}}** points of talon terror!",
+f"**{{attacker}}** sets a trap with a snow-covered slide for **{{defender}}**, causing **{{dmg}}** points of slippery slide damage!",
+f"**{{attacker}}** whips up a snowstorm, burying **{{defender}}** in snow, causing **{{dmg}}** points of whiteout woe!",
+f"**{{attacker}}** sends a flurry of frosty memes at **{{defender}}**, causing **{{dmg}}** points of viral vexation!",
+f"**{{attacker}}** releases a pack of ice squirrels on **{{defender}}**, causing **{{dmg}}** points of nutty nuisance!",
+f"**{{attacker}}** uses a frozen banana as a boomerang, hitting **{{defender}}**, causing **{{dmg}}** points of fruity fright!",
+f"**{{attacker}}** sends a snow skelly riding a toboggan at **{{defender}}**, causing **{{dmg}}** points of downhill disaster!",
+f"**{{attacker}}** uses a snow cannon to blast **{{defender}}**, causing **{{dmg}}** points of icy indignity!"
+
+special attack format:
+f"**{{attacker}}** hurls a snowball imbued with the force of a comet at **{{defender}}**, causing **{{dmg}}** points of cosmic impact damage!",
+f"**{{attacker}}** launches a snowball from a trebuchet, smashing into **{{defender}}**, causing **{{dmg}}** points of siege damage!",
+f"**{{attacker}}** throws a snowball enchanted with frost magic at **{{defender}}**, causing **{{dmg}}** points of arcane chill damage!",
+f"**{{attacker}}** uses a slingshot to propel a snowball at **{{defender}}**, causing **{{dmg}}** points of high-velocity impact damage!",
+f"**{{attacker}}** catapults a snowball filled with icy shards at **{{defender}}**, causing **{{dmg}}** points of piercing cold damage!",
+f"**{{attacker}}** hurls a snowball that transforms into a snow golem upon hitting **{{defender}}**, causing **{{dmg}}** points of crushing damage!",
+f"**{{attacker}}** throws a snowball that explodes into a blizzard upon impact with **{{defender}}**, causing **{{dmg}}** points of frostbite damage!",
+f"**{{attacker}}** launches a snowball that morphs into a flurry of icicles at **{{defender}}**, causing **{{dmg}}** points of laceration damage!",
+f"**{{attacker}}** hurls a snowball that bursts into a swarm of frost fairies upon hitting **{{defender}}**, causing **{{dmg}}** points of magical frost damage!",
+f"**{{attacker}}** throws a snowball that turns into a hailstorm upon impact with **{{defender}}**, causing **{{dmg}}** points of hailstone damage!"
+
+
+heal phrase format:
+f"**{{attacker}}** sips a steaming mug of hot cocoa, feeling the warmth restore **{{heal}}** HP!",
+f"**{{attacker}}** wraps up in a cozy winter blanket, feeling their energy return for **{{heal}}** HP!",
+f"**{{attacker}}** munches on a gingerbread cookie, feeling the sweet spices rejuvenate **{{heal}}** HP!",
+f"**{{attacker}}** dons a pair of fuzzy socks, feeling the comfort boost their vitality for **{{heal}}** HP!",
+f"**{{attacker}}** lights a crackling fireplace, feeling the soothing heat mend **{{heal}}** HP!",
+f"**{{attacker}}** catches a magical snowflake on their tongue, feeling the icy magic restore **{{heal}}** HP!",
+f"**{{attacker}}** sips a flask of peppermint schnapps, feeling the fiery liquid invigorate **{{heal}}** HP!",
+f"**{{attacker}}** snuggles with a snow puppy, feeling the fluffy cuddles rejuvenate **{{heal}}** HP!",
+f"**{{attacker}}** eats a slice of mom's homemade pumpkin pie, feeling the familiar taste restore **{{heal}}** HP!",
+f"**{{attacker}}** warms their hands on a yule log fire, feeling the radiant heat revive **{{heal}}** HP!"
+f"**{{attacker}}** gulps down a frosty mug of eggnog, the creamy delight boosts **{{heal}}** HP!",
+f"**{{attacker}}** slips into a thermal onesie, the cozy warmth rejuvenates **{{heal}}** HP!",
+f"**{{attacker}}** savors a candy cane, the minty sweetness invigorates **{{heal}}** HP!",
+f"**{{attacker}}** basks in the glow of a holiday candle, the serene light restores **{{heal}}** HP!",
+f"**{{attacker}}** nibbles on a snowflake-shaped cookie, the sugary treat revives **{{heal}}** HP!",
+f"**{{attacker}}** snuggles into a heated blanket, the enveloping warmth boosts **{{heal}}** HP!",
+f"**{{attacker}}** sips a piping hot toddy, the warming drink revitalizes **{{heal}}** HP!",
+f"**{{attacker}}** enjoys a hearty bowl of chili, the spicy sustenance regenerates **{{heal}}** HP!",
+f"**{{attacker}}** savors a roasted chestnut, the nutty delight restores **{{heal}}** HP!",
+f"**{{attacker}}** warms up with a hot water bottle, the soothing heat revives **{{heal}}** HP!"
+f"**{{attacker}}** skates on a frozen pond, the brisk activity pumps **{{heal}}** HP!",
+f"**{{attacker}}** builds a snowman, the fun in the snow boosts **{{heal}}** HP!",
+f"**{{attacker}}** sleds down a snowy hill, the thrilling ride invigorates **{{heal}}** HP!",
+f"**{{attacker}}** throws a snowball, the playful act restores **{{heal}}** HP!",
+f"**{{attacker}}** wears a fluffy earmuff, the cozy accessory revives **{{heal}}** HP!",
+f"**{{attacker}}** drinks a glass of mulled wine, the spicy beverage revitalizes **{{heal}}** HP!",
+f"**{{attacker}}** eats a bowl of snow cream, the frosty dessert regenerates **{{heal}}** HP!",
+f"**{{attacker}}** wears a pair of snow goggles, the clear vision restores **{{heal}}** HP!",
+f"**{{attacker}}** rides a snowmobile, the exhilarating ride pumps **{{heal}}** HP!",
+f"**{{attacker}}** wears a pair of ice cleats, the secure footing revives **{{heal}}** HP!"
+
+random event format:
+f"An avalanche took out **{{defender}}** while he was enjoying a mug of Ada Ale causing **{{dmg}}** damage!",
+f"An icy snowball rolled down a mountain into **{{defender}}**'s car while they were driving their car. The resulting explosion causes **{{dmg}}** damage!",
+f"A polar bear crashes into **{{defender}}**'s igloo, causing a snowstorm of **{{dmg}}** damage!",
+f"**{{defender}}** slips on a patch of black ice, tumbling down a hill for **{{dmg}}** damage!",
+f"A sudden blizzard engulfs **{{defender}}**, the frostbite inflicts **{{dmg}}** damage!",
+f"**{{defender}}** gets caught in a snowball fight, a direct hit causes **{{dmg}}** damage!",
+f"A rogue icicle falls from a tree, piercing **{{defender}}** for **{{dmg}}** damage!",
+f"**{{defender}}** gets buried in a snowdrift, the cold exposure causes **{{dmg}}** damage!",
+f"A yeti mistakes **{{defender}}** for a playmate, the roughhousing inflicts **{{dmg}}** damage!",
+f"**{{defender}}** tries to lick a frozen pole, the resulting tug-of-war causes **{{dmg}}** damage!",
+f"A sledding mishap sends **{{defender}}** into a snowbank, causing **{{dmg}}** damage!",
+f"**{{defender}}** gets hit by a snowplow, the unexpected collision causes **{{dmg}}** damage!"
+f"A frost giant sneezes on **{{defender}}**, the icy blast inflicts **{{dmg}}** frostbite!",
+f"**{{defender}}** gets caught in a reindeer stampede, the trampling causes **{{dmg}}** bruises!",
+f"A snowman comes to life and punches **{{defender}}**, the icy fist causes **{{dmg}}** injuries!",
+f"**{{defender}}** gets swept up in a snow tornado, the swirling vortex inflicts **{{dmg}}** harm!",
+f"A hailstorm targets **{{defender}}**, the icy projectiles cause **{{dmg}}** welts!",
+f"**{{defender}}** gets hit by a runaway toboggan, the collision results in **{{dmg}}** contusions!",
+f"An ice dragon breathes on **{{defender}}**, the frosty breath causes **{{dmg}}** chills!",
+f"**{{defender}}** gets caught in a snow fort collapse, the incident causes **{{dmg}}** scrapes!",
+f"A pack of snow leopards pounce on **{{defender}}**, the attack inflicts **{{dmg}}** scratches!",
+f"**{{defender}}** falls through thin ice into a frozen lake, the icy plunge causes **{{dmg}}** hypothermia!"
+f"An avalanche barrels into **{{defender}}**, the crushing snow inflicts **{{dmg}}** trauma!",
+f"**{{defender}}** gets smacked by a flying snowboard, the impact causes **{{dmg}}** distress!",
+f"A polar vortex sweeps over **{{defender}}**, the freezing winds cause **{{dmg}}** affliction!",
+f"**{{defender}}** is pelted by a flurry of snowballs, the icy barrage inflicts **{{dmg}}** discomfort!",
+f"A mischievous elf pelts **{{defender}}** with icy snowballs, the frosty onslaught causes **{{dmg}}** agony!",
+f"**{{defender}}** is caught in a sudden ice quake, the shaking ground inflicts **{{dmg}}** suffering!",
+f"A blizzard wolf bites **{{defender}}**, the frosty fangs cause **{{dmg}}** torment!",
+f"**{{defender}}** is hit by a falling icicle, the sharp impact causes **{{dmg}}** distress!",
+f"A snow golem stomps on **{{defender}}**, the heavy footfall inflicts **{{dmg}}** pain!",
+f"**{{defender}}** is caught in a frostfire explosion, the icy flames cause **{{dmg}}** hurt!"
